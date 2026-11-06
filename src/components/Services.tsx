@@ -11,7 +11,7 @@ export default function Services() {
           <SectionHeading
             eyebrow="What we do"
             title={<>Care for every panel.<br /><span className="text-silver">Inside & out.</span></>}
-            desc="Verified services from the Nexgen studio in Varkala — from everyday foam washes to concours-level coating and body-shop work."
+            desc="Verified services from the Nexgen studio in Varkala — from everyday foam washes to concours-level coatings and bike care."
           />
           <Reveal delay={0.2} className="shrink-0">
             <a

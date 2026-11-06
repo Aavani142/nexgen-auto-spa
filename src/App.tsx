@@ -3,7 +3,6 @@ import Hero from "./components/Hero";
 import TrustBar from "./components/TrustBar";
 import Services from "./components/Services";
 import WhyNexgen from "./components/WhyNexgen";
-import WorkGallery from "./components/WorkGallery";
 import Experience from "./components/Experience";
 import Testimonials from "./components/Testimonials";
 import Packages from "./components/Packages";
@@ -29,7 +28,6 @@ export default function App() {
         <TrustBar />
         <Services />
         <WhyNexgen />
-        <WorkGallery />
         <Experience />
         <Testimonials />
         <Packages />

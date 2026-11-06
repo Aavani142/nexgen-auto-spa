@@ -102,11 +102,11 @@ export default function Hero() {
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
             <a
-              href="#work"
+              href="#services"
               className="group font-display inline-flex items-center justify-center gap-2.5 border border-white/20 bg-white/[0.04] px-8 py-4 text-sm font-bold uppercase tracking-[0.12em] text-bone backdrop-blur-sm transition-all duration-300 hover:border-bone/60 hover:bg-white/[0.08]"
             >
               <Play className="h-4 w-4 fill-current" />
-              Explore Our Work
+              Explore Our Services
             </a>
           </motion.div>
         </div>

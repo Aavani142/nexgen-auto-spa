@@ -7,7 +7,7 @@ import { InstagramIcon, WhatsAppIcon } from "./icons";
 import { cn } from "../utils/cn";
 
 const VEHICLES = ["Hatchback / Sedan", "SUV / MUV", "Luxury / Premium", "Bike / Scooter", "Other"];
-const INTERESTS = ["Premium Foam Wash", "Interior Deep Cleaning", "Exterior Detailing / Polish", "Ceramic / Graphene Coating", "Engine Bay Detailing", "Painting / PPF / Body Shop", "Bike Detailing / Service", "Not sure — need advice"];
+const INTERESTS = ["Premium Foam Wash", "Interior Deep Cleaning", "Exterior Detailing / Polish", "Ceramic / Graphene Coating", "Bike Detailing / Service", "Not sure — need advice"];
 
 type Errors = Partial<Record<"name" | "phone" | "vehicle" | "service", string>>;
 

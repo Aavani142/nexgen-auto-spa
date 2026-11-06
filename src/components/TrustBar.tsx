@@ -6,7 +6,7 @@ const ITEMS = [
   { icon: BadgeCheck, title: "Premium Int'l Products", sub: "Koch-Chemie · RUPES · GYEON" },
   { icon: Sparkles, title: "Cars + Bikes", sub: "Foam wash to full detail" },
   { icon: Car, title: "Pickup & Drop", sub: "Available on request" },
-  { icon: Bike, title: "Body Shop & Customs", sub: "Paint · PPF · Mods" },
+  { icon: Bike, title: "Bike Care & Customs", sub: "Service · Spares · Mods" },
   { icon: Star, title: "5.0 on Google", sub: "Nexgen AutoSpa Reviews", href: BUSINESS.googleReviewsUrl },
   { icon: MapPin, title: "Kurakkanni, Varkala", sub: "Easy to reach studio", href: BUSINESS.mapsQuery },
 ];
@@ -54,7 +54,7 @@ export default function TrustBar() {
         <div className="flex w-max animate-marquee gap-0 whitespace-nowrap">
           {[0, 1].map((n) => (
             <div key={n} className="flex items-center" aria-hidden={n === 1}>
-              {["CERAMIC COATING", "GRAPHENE PROTECTION", "INTERIOR DETAILING", "PREMIUM FOAM WASH", "ENGINE BAY DETAIL", "BIKE SPA", "PAINT & PPF"].map((t) => (
+              {["CERAMIC COATING", "GRAPHENE PROTECTION", "INTERIOR DETAILING", "PREMIUM FOAM WASH", "BIKE SPA"].map((t) => (
                 <span key={t + n} className="font-display flex items-center text-[13px] font-semibold tracking-[0.3em] text-silver/80">
                   <span className="px-8">{t}</span>
                   <span className="h-1.5 w-1.5 rotate-45 bg-ember/70" />
