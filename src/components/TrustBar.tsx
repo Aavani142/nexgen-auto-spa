@@ -7,7 +7,7 @@ const ITEMS = [
   { icon: Sparkles, title: "Cars + Bikes", sub: "Foam wash to full detail" },
   { icon: Car, title: "Pickup & Drop", sub: "Available on request" },
   { icon: Bike, title: "Bike Care & Customs", sub: "Service · Spares · Mods" },
-  { icon: Star, title: "5.0 on Google", sub: "Nexgen AutoSpa Reviews", href: BUSINESS.googleReviewsUrl },
+  { icon: Star, title: "4.5 on Google", sub: "Nexgen AutoSpa Reviews", href: BUSINESS.googleReviewsUrl },
   { icon: MapPin, title: "Kurakkanni, Varkala", sub: "Easy to reach studio", href: BUSINESS.mapsQuery },
 ];
 

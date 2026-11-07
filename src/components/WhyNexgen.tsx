@@ -67,7 +67,7 @@ export default function WhyNexgen() {
             <p className="font-display text-2xl font-extrabold leading-none">
               9<span className="text-ember">–</span>8
             </p>
-            <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.2em] text-silver">Open daily · Varkala</p>
+            <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.2em] text-silver">Mon – Sat · Varkala</p>
           </motion.div>
         </div>
 

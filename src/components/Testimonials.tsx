@@ -39,11 +39,17 @@ export default function Testimonials() {
                 </div>
                 <div className="mt-0.5 flex items-center gap-2 text-xs text-neutral-600">
                   <span className="flex gap-0.5">
-                    {Array.from({ length: 5 }).map((_, i) => (
+                    {Array.from({ length: 4 }).map((_, i) => (
                       <Star key={i} className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
                     ))}
+                    <span className="relative inline-block h-3.5 w-3.5">
+                      <Star className="absolute inset-0 h-3.5 w-3.5 text-amber-500" />
+                      <span className="absolute inset-y-0 left-0 w-1/2 overflow-hidden">
+                        <Star className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
+                      </span>
+                    </span>
                   </span>
-                  <span className="font-bold text-carbon">5.0 Star Rating</span>
+                  <span className="font-bold text-carbon">4.5 Star Rating</span>
                   <span>· Verified Google Reviews</span>
                 </div>
               </div>

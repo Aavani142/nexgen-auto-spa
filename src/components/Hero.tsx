@@ -74,10 +74,16 @@ export default function Hero() {
               protection to cabin revival.
             </p>
             <div className="mt-4 flex items-center gap-2 pl-4 text-sm text-silver">
-              <span className="flex gap-0.5" aria-label="5 star rated">
-                {Array.from({ length: 5 }).map((_, i) => (
+              <span className="flex gap-0.5" aria-label="Rated 4.5 out of 5 on Google">
+                {Array.from({ length: 4 }).map((_, i) => (
                   <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
                 ))}
+                <span className="relative inline-block h-3.5 w-3.5">
+                  <Star className="absolute inset-0 h-3.5 w-3.5 text-amber-400" />
+                  <span className="absolute inset-y-0 left-0 w-1/2 overflow-hidden">
+                    <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+                  </span>
+                </span>
               </span>
               <span>Loved by car & bike owners across Varkala</span>
             </div>

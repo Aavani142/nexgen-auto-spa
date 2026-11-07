@@ -3,17 +3,17 @@ export const BUSINESS = {
   short: "NEXGEN",
   tagline: "Your Drive. Our Obsession.",
   location: "Varkala, Kerala",
-  address: "Punnamoodu Kurakkanni Road, Kurakkanni, Varkala, Kerala 695311",
+  address: "Punnamoodu Kurakkanni Road, Kurakkanni, Varkala, Kerala 695141",
   phoneDisplay: "+91 77365 85164",
   phoneHref: "tel:+917736585164",
   whatsapp: "https://wa.me/917736585164",
   instagram: "https://www.instagram.com/nexgen_autospa_varkala/",
   facebook: "https://www.facebook.com/autospavarkalas/",
-  hours: "Open Daily · 9:00 AM – 8:00 PM",
-  hoursShort: "9 AM – 8 PM · All Days",
-  mapsQuery: "https://www.google.com/maps/search/?api=1&query=Nexgen+AutoSpa+Varkala+Kurakkanni+Road+Varkala+Kerala+695311",
+  hours: "Mon – Sat · 9:00 AM – 8:00 PM",
+  hoursShort: "Mon – Sat · 9 AM – 8 PM",
+  mapsQuery: "https://www.google.com/maps/search/?api=1&query=Nexgen+AutoSpa+Varkala+Kurakkanni+Road+Varkala+Kerala+695141",
   mapsEmbed:
-    "https://www.google.com/maps?q=Punnamoodu+Kurakkanni+Road,+Varkala,+Kerala+695311&output=embed",
+    "https://www.google.com/maps?q=Punnamoodu+Kurakkanni+Road,+Varkala,+Kerala+695141&output=embed",
   googleReviewsUrl: "https://share.google/fO64lqrqMJtfFO6Zq",
 };
 
@@ -146,7 +146,7 @@ export const TESTIMONIALS = [
 export const FAQS = [
   {
     q: "How can I book a detailing service?",
-    a: "The fastest way is WhatsApp — tap any “Book on WhatsApp” button and send us your vehicle model and the service you need. You can also call us on +91 77365 85164 (9 AM – 8 PM, all days) or fill the enquiry form below and we’ll call you back.",
+    a: "The fastest way is WhatsApp — tap any “Book on WhatsApp” button and send us your vehicle model and the service you need. You can also call us on +91 77365 85164 (9 AM – 8 PM, Monday to Saturday; closed Sunday) or fill the enquiry form below and we’ll call you back.",
   },
   {
     q: "Do I need an appointment?",
@@ -166,7 +166,7 @@ export const FAQS = [
   },
   {
     q: "Where is Nexgen Auto Spa located?",
-    a: "You’ll find us at Punnamoodu Kurakkanni Road, Kurakkanni, Varkala, Kerala 695311 — easy to reach from across Varkala and nearby Trivandrum. Tap “Get Directions” for one-tap navigation, or call us and we’ll guide you in.",
+    a: "You’ll find us at Punnamoodu Kurakkanni Road, Kurakkanni, Varkala, Kerala 695141 — easy to reach from across Varkala and nearby Trivandrum. Tap “Get Directions” for one-tap navigation, or call us and we’ll guide you in.",
   },
 ];
 

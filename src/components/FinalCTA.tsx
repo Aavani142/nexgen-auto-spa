@@ -26,7 +26,7 @@ export default function FinalCTA() {
       <div className="relative mx-auto max-w-4xl px-5 text-center lg:px-8">
         <Reveal>
           <p className="font-display text-[11px] font-bold uppercase tracking-[0.32em] text-ember">
-            Varkala · Kerala · Open Daily 9–8
+            Varkala · Kerala · Mon – Sat 9–8
           </p>
         </Reveal>
         <Reveal delay={0.1}>

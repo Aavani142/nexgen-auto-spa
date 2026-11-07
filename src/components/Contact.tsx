@@ -73,7 +73,7 @@ export default function Contact() {
                   <WhatsAppIcon className="h-5 w-5 text-ember" />
                   <p className="font-display mt-4 text-[11px] font-bold uppercase tracking-[0.2em] text-silver">WhatsApp</p>
                   <p className="font-display mt-1.5 text-lg font-bold text-bone group-hover:text-ember">Chat & Book</p>
-                  <p className="mt-1 text-xs text-silver">Fast replies, 9 AM – 8 PM</p>
+                  <p className="mt-1 text-xs text-silver">Fast replies, Mon – Sat 9 AM – 8 PM</p>
                 </a>
                 <div className="border border-white/[0.09] bg-graphite/70 p-6">
                   <MapPin className="h-5 w-5 text-ember" strokeWidth={1.8} />
