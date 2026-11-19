@@ -33,7 +33,7 @@ export const PRODUCTS = [
   { name: "Koch-Chemie", country: "Germany", note: "Compounds, polishes & care chemistry" },
   { name: "RUPES", country: "Italy", note: "Polishing systems & machine technology" },
   { name: "GYEON", country: "South Korea", note: "Coating systems & surface protection" },
-  { name: "CARPRO", country: "International", note: "Coatings & detailing care products" },
+  { name: "CARPRO", country: "South Korea", note: "Coatings & detailing care products" },
   { name: "Kovalent Coatings", country: "Australia", note: "Professional coating systems" },
 ];
 

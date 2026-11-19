@@ -47,11 +47,11 @@ const PRODUCTS = [
     brand: "GYEON",
     origin: "South Korea",
     role: "Advanced Quartz Coating Systems",
-    desc: "Globally acclaimed quartz and Graphene Coating chemistry tested under extreme climates.",
+    desc: "Globally acclaimed quartz and polysilazane coating chemistry tested under extreme climates.",
   },
   {
     brand: "CARPRO",
-    origin: "International",
+    origin: "South Korea",
     role: "Coatings & Detailing Care",
     desc: "Makers of CQUARTZ Ceramic Coatings, plus washing, decontamination and paint-prep care trusted by detailers worldwide.",
   },

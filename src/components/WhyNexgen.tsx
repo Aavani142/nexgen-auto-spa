@@ -32,47 +32,9 @@ export default function WhyNexgen() {
         </p>
       </div>
 
-      <div className="relative mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-2 lg:gap-20 lg:px-8">
-        {/* imagery */}
-        <div className="relative order-2 lg:order-1">
-          <Reveal>
-            <div className="img-zoom clip-slant relative overflow-hidden">
-              <img
-                src="https://images.pexels.com/photos/35149470/pexels-photo-35149470.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                alt="Detailer machine-polishing a car door in a professional studio"
-                loading="lazy"
-                className="aspect-[4/5] w-full object-cover sm:aspect-[5/5.4]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-carbon/50 via-transparent to-transparent" aria-hidden />
-            </div>
-          </Reveal>
-          <Reveal delay={0.2} className="absolute -bottom-8 -right-2 w-[52%] sm:right-6 lg:-right-6">
-            <div className="overflow-hidden rounded-sm shadow-[0_24px_64px_-16px_rgba(11,13,15,0.5)] ring-4 ring-bone">
-              <img
-                src="https://images.pexels.com/photos/17339307/pexels-photo-17339307.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="Close-up of pristine luxury car interior trim"
-                loading="lazy"
-                className="aspect-[4/3] w-full object-cover"
-              />
-            </div>
-          </Reveal>
-          {/* floating badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="absolute -left-2 top-8 bg-carbon px-5 py-4 text-bone shadow-xl sm:left-6"
-          >
-            <p className="font-display text-2xl font-extrabold leading-none">
-              8:30<span className="text-ember">–</span>6
-            </p>
-            <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.2em] text-silver">Mon – Sat · Varkala</p>
-          </motion.div>
-        </div>
-
+      <div className="relative mx-auto max-w-3xl px-5 lg:px-8">
         {/* copy */}
-        <div className="order-1 lg:order-2 lg:pt-4">
+        <div>
           <Reveal>
             <Eyebrow>Why Nexgen</Eyebrow>
           </Reveal>
