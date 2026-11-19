@@ -7,7 +7,7 @@ const STEPS = [
     n: "01",
     icon: MessageCircle,
     t: "Get in Touch",
-    d: "Contact the team and discuss your vehicle's needs — on WhatsApp, call, or the form below.",
+    d: "Contact the team and discuss your vehicle's needs on WhatsApp, Call, or the Form below.",
   },
   {
     n: "02",
@@ -19,13 +19,13 @@ const STEPS = [
     n: "03",
     icon: Sparkles,
     t: "Precision in Every Detail",
-    d: "The team works on your vehicle with care and attention — relax in our lounge or use pickup & drop.",
+    d: "The team works on your vehicle with care and attention.",
   },
   {
     n: "04",
     icon: KeyRound,
     t: "Drive Away Refreshed",
-    d: "Experience your vehicle looking its best — protected, revived and ready for every drive.",
+    d: "Experience your vehicle looking its best: protected, revived and ready for every drive.",
   },
 ];
 

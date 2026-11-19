@@ -1,18 +1,22 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { X, Send, CheckCircle2, AlertCircle, Loader2, Phone } from "lucide-react";
-import { BUSINESS, SERVICES, waLink } from "../data/site";
+import { BUSINESS, waLink } from "../data/site";
 import { WhatsAppIcon } from "./icons";
 import { cn } from "../utils/cn";
 
-const LOCATIONS = ["Varkala", "Kurakkanni", "Ponnumthuruth", "Sreekaryam", "Attingal", "Kazhakkoottam", "Trivandrum", "Other (Kerala)"];
-const VEHICLES = ["Hatchback", "Sedan", "SUV / MUV", "Luxury / Premium", "Bike / Scooter", "Other"];
+const REQUIREMENTS = [
+  "Ceramic, Graphene & Borophene Coating",
+  "Interior Deep Cleaning",
+  "Exterior Detailing",
+  "Bike Detailing & Care",
+];
 
-type Errors = Partial<Record<"name" | "phone" | "location" | "requirement", string>>;
+type Errors = Partial<Record<"name" | "phone" | "requirement", string>>;
 
 export default function WelcomeModal() {
   const [open, setOpen] = useState(false);
-  const [form, setForm] = useState({ name: "", phone: "", location: "", vehicle: "", requirement: "", message: "" });
+  const [form, setForm] = useState({ name: "", phone: "", brand: "", model: "", requirement: "", message: "" });
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
   const [imgOk, setImgOk] = useState(true);
@@ -61,7 +65,6 @@ export default function WelcomeModal() {
     const er: Errors = {};
     if (form.name.trim().length < 2) er.name = "Please tell us your name.";
     if (form.phone.replace(/\D/g, "").length < 10) er.phone = "Enter a valid 10-digit mobile.";
-    if (!form.location) er.location = "Where are you calling from?";
     if (!form.requirement) er.requirement = "Pick a service.";
     setErrors(er);
     return Object.keys(er).length === 0;
@@ -73,8 +76,9 @@ export default function WelcomeModal() {
     setStatus("sending");
     const msg =
       `Hi NEXGEN AUTO SPA! New enquiry from the website:\n` +
-      `• Name: ${form.name}\n• Phone: ${form.phone}\n• Location: ${form.location}\n` +
-      (form.vehicle ? `• Vehicle: ${form.vehicle}\n` : "") +
+      `• Name: ${form.name}\n• Phone: ${form.phone}\n` +
+      (form.brand.trim() ? `• Vehicle Brand: ${form.brand.trim()}\n` : "") +
+      (form.model.trim() ? `• Vehicle Model: ${form.model.trim()}\n` : "") +
       `• Requirement: ${form.requirement}\n` +
       (form.message ? `• Note: ${form.message}` : "");
     setTimeout(() => {
@@ -145,7 +149,7 @@ export default function WelcomeModal() {
                   <span className="text-ember">Our Obsession.</span>
                 </p>
                 <p className="mt-3 text-xs leading-relaxed text-silver">
-                  Wax · Ceramic · Graphene · Borophene protection by Koch-Chemie, RUPES & GYEON.
+                  Wax · Ceramic · Graphene · Borophene protection by Koch-Chemie, RUPES, GYEON, CARPRO & Kovalent Coatings.
                 </p>
               </div>
             </div>
@@ -157,7 +161,7 @@ export default function WelcomeModal() {
                   <CheckCircle2 className="h-14 w-14 text-emerald-400" strokeWidth={1.4} />
                   <h2 className="font-display mt-5 text-2xl font-bold text-bone">Enquiry ready!</h2>
                   <p className="mt-2 max-w-xs text-sm leading-relaxed text-silver">
-                    WhatsApp has opened with your details pre-filled — press send and our team will reply with
+                    WhatsApp has opened with your details pre-filled. Press send and our team will reply with
                     availability and a quote.
                   </p>
                   <div className="mt-7 flex flex-col gap-2.5">
@@ -198,29 +202,25 @@ export default function WelcomeModal() {
                         {errors.phone && <p className="mt-1.5 flex items-center gap-1 text-[11px] text-red-400"><AlertCircle className="h-3 w-3" />{errors.phone}</p>}
                       </div>
                     </div>
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <div>
-                        <label htmlFor="w-location" className={labelCls}>Your location *</label>
-                        <select id="w-location" value={form.location} onChange={set("location")} className={cn(inputCls(errors.location), !form.location && "text-silver/45")} aria-invalid={!!errors.location}>
-                          <option value="" disabled>Select area</option>
-                          {LOCATIONS.map((l) => <option key={l} value={l}>{l}</option>)}
-                        </select>
-                        {errors.location && <p className="mt-1.5 flex items-center gap-1 text-[11px] text-red-400"><AlertCircle className="h-3 w-3" />{errors.location}</p>}
+                    <fieldset className="border border-white/10 p-4">
+                      <legend className="font-display px-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-ember">Vehicle Details</legend>
+                      <div className="grid gap-4 sm:grid-cols-2">
+                        <div>
+                          <label htmlFor="w-brand" className={labelCls}>Vehicle Brand</label>
+                          <input id="w-brand" type="text" autoComplete="off" placeholder="e.g. Toyota, Honda" value={form.brand} onChange={set("brand")} className={inputCls()} />
+                        </div>
+                        <div>
+                          <label htmlFor="w-model" className={labelCls}>Vehicle Model</label>
+                          <input id="w-model" type="text" autoComplete="off" placeholder="e.g. Innova, City" value={form.model} onChange={set("model")} className={inputCls()} />
+                        </div>
                       </div>
-                      <div>
-                        <label htmlFor="w-vehicle" className={labelCls}>Vehicle</label>
-                        <select id="w-vehicle" value={form.vehicle} onChange={set("vehicle")} className={cn(inputCls(), !form.vehicle && "text-silver/45")}>
-                          <option value="" disabled>Select vehicle</option>
-                          {VEHICLES.map((v) => <option key={v} value={v}>{v}</option>)}
-                        </select>
-                      </div>
-                    </div>
+                    </fieldset>
                     <div>
                       <label htmlFor="w-req" className={labelCls}>What do you need? *</label>
                       <select id="w-req" value={form.requirement} onChange={set("requirement")} className={cn(inputCls(errors.requirement), !form.requirement && "text-silver/45")} aria-invalid={!!errors.requirement}>
                         <option value="" disabled>Choose a service</option>
-                        {SERVICES.map((s) => <option key={s.id} value={s.title}>{s.title}</option>)}
-                        <option value="Not sure — advise me">Not sure — advise me</option>
+                        {REQUIREMENTS.map((s) => <option key={s} value={s}>{s}</option>)}
+                        <option value="Not sure, advise me">Not sure, advise me</option>
                       </select>
                       {errors.requirement && <p className="mt-1.5 flex items-center gap-1 text-[11px] text-red-400"><AlertCircle className="h-3 w-3" />{errors.requirement}</p>}
                     </div>

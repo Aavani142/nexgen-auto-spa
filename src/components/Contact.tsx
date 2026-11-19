@@ -6,13 +6,14 @@ import { Reveal, SectionHeading } from "./ui";
 import { InstagramIcon, WhatsAppIcon } from "./icons";
 import { cn } from "../utils/cn";
 
-const VEHICLES = ["Hatchback / Sedan", "SUV / MUV", "Luxury / Premium", "Bike / Scooter", "Other"];
-const INTERESTS = ["Premium Foam Wash", "Interior Deep Cleaning", "Exterior Detailing / Polish", "Ceramic / Graphene Coating", "Bike Detailing / Service", "Not sure — need advice"];
+const INTERESTS = ["Interior Deep Cleaning", "Exterior Detailing / Polish", "Ceramic, Graphene & Borophene Coating", "Bike Detailing / Service", "Not sure, need advice"];
 
-type Errors = Partial<Record<"name" | "phone" | "vehicle" | "service", string>>;
+type Errors = Partial<Record<"name" | "phone" | "brand" | "model" | "service", string>>;
+
+const EMPTY_FORM = { name: "", phone: "", brand: "", model: "", service: "", message: "" };
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", phone: "", vehicle: "", service: "", message: "" });
+  const [form, setForm] = useState(EMPTY_FORM);
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
 
@@ -26,7 +27,8 @@ export default function Contact() {
     if (form.name.trim().length < 2) er.name = "Please enter your name.";
     const digits = form.phone.replace(/\D/g, "");
     if (digits.length < 10) er.phone = "Enter a valid 10-digit mobile number.";
-    if (!form.vehicle) er.vehicle = "Select your vehicle type.";
+    if (!form.brand.trim()) er.brand = "Enter your vehicle brand.";
+    if (!form.model.trim()) er.model = "Enter your vehicle model.";
     if (!form.service) er.service = "Choose a service.";
     setErrors(er);
     return Object.keys(er).length === 0;
@@ -36,7 +38,7 @@ export default function Contact() {
     e.preventDefault();
     if (!validate()) return;
     setStatus("sending");
-    const msg = `Hi NEXGEN AUTO SPA! New booking enquiry:\n• Name: ${form.name}\n• Phone: ${form.phone}\n• Vehicle: ${form.vehicle}\n• Service: ${form.service}${form.message ? `\n• Note: ${form.message}` : ""}\nPlease confirm a slot. Thank you!`;
+    const msg = `Hi NEXGEN AUTO SPA! New booking enquiry:\n• Name: ${form.name}\n• Phone: ${form.phone}\n• Vehicle Brand: ${form.brand.trim()}\n• Vehicle Model: ${form.model.trim()}\n• Service: ${form.service}${form.message ? `\n• Note: ${form.message}` : ""}\nPlease confirm a slot. Thank you!`;
     setTimeout(() => {
       window.open(waLink(msg), "_blank", "noopener");
       setStatus("done");
@@ -55,7 +57,7 @@ export default function Contact() {
         <SectionHeading
           eyebrow="Visit / Book"
           title={<>Find us in <span className="text-ember">Varkala.</span></>}
-          desc="Drop in, call, or send a WhatsApp enquiry — booking takes less than a minute."
+          desc="Drop in, Call, or send a WhatsApp enquiry. Booking takes less than a minute."
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1fr_1.05fr]">
@@ -73,7 +75,7 @@ export default function Contact() {
                   <WhatsAppIcon className="h-5 w-5 text-ember" />
                   <p className="font-display mt-4 text-[11px] font-bold uppercase tracking-[0.2em] text-silver">WhatsApp</p>
                   <p className="font-display mt-1.5 text-lg font-bold text-bone group-hover:text-ember">Chat & Book</p>
-                  <p className="mt-1 text-xs text-silver">Fast replies, Mon – Sat 9 AM – 8 PM</p>
+                  <p className="mt-1 text-xs text-silver">Fast replies, {BUSINESS.hoursShort}</p>
                 </a>
                 <div className="border border-white/[0.09] bg-graphite/70 p-6">
                   <MapPin className="h-5 w-5 text-ember" strokeWidth={1.8} />
@@ -92,7 +94,7 @@ export default function Contact() {
             <Reveal delay={0.1}>
               <div className="relative overflow-hidden border border-white/[0.09]">
                 <iframe
-                  title="Nexgen Auto Spa location map — Varkala"
+                  title="Nexgen Auto Spa location map, Varkala"
                   src={BUSINESS.mapsEmbed}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -100,7 +102,7 @@ export default function Contact() {
                 />
                 <div className="flex flex-col gap-3 bg-graphite p-5 sm:flex-row sm:items-center sm:justify-between">
                   <p className="text-sm text-silver">
-                    <span className="font-display font-bold text-bone">NEXGEN AUTO SPA</span> · Kurakkanni, Varkala
+                    <span className="font-display font-bold text-bone">NEXGEN AUTO SPA</span> · {BUSINESS.address}
                   </p>
                   <div className="flex gap-2.5">
                     <a
@@ -130,7 +132,7 @@ export default function Contact() {
             <div className="relative h-full border border-white/[0.09] bg-graphite/70 p-7 sm:p-10">
               <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-ember via-ember/50 to-transparent" aria-hidden />
               <h3 className="font-display text-2xl font-bold tracking-tight text-bone">Request a callback & quote</h3>
-              <p className="mt-2 text-sm text-silver">Fill this in — we'll open WhatsApp with your enquiry ready to send.</p>
+              <p className="mt-2 text-sm text-silver">Fill this in and we'll open WhatsApp with your enquiry ready to send.</p>
 
               <AnimatePresence mode="wait">
                 {status === "done" ? (
@@ -143,11 +145,11 @@ export default function Contact() {
                     <CheckCircle2 className="mx-auto h-12 w-12 text-emerald-400" strokeWidth={1.5} />
                     <h4 className="font-display mt-4 text-xl font-bold text-bone">Enquiry ready on WhatsApp!</h4>
                     <p className="mx-auto mt-2 max-w-sm text-sm leading-relaxed text-silver">
-                      We've opened WhatsApp with your details pre-filled — just press send. Prefer to talk? Call us on{" "}
+                      We've opened WhatsApp with your details pre-filled. Just press send. Prefer to talk? Call us on{" "}
                       <a href={BUSINESS.phoneHref} className="font-bold text-bone hover:text-ember">{BUSINESS.phoneDisplay}</a>.
                     </p>
                     <button
-                      onClick={() => { setStatus("idle"); setForm({ name: "", phone: "", vehicle: "", service: "", message: "" }); }}
+                      onClick={() => { setStatus("idle"); setForm(EMPTY_FORM); }}
                       className="font-display mt-6 border border-white/15 px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-bone transition-colors hover:border-ember hover:text-ember"
                     >
                       Send another enquiry
@@ -179,27 +181,34 @@ export default function Contact() {
                         {errors.phone && <p className="mt-1.5 flex items-center gap-1 text-xs text-red-400"><AlertCircle className="h-3 w-3" />{errors.phone}</p>}
                       </div>
                     </div>
-                    <div className="grid gap-5 sm:grid-cols-2">
-                      <div>
-                        <label htmlFor="cf-vehicle" className="font-display mb-2 block text-[11px] font-bold uppercase tracking-[0.18em] text-silver">
-                          Vehicle type *
-                        </label>
-                        <select id="cf-vehicle" value={form.vehicle} onChange={set("vehicle")} className={cn(inputCls(errors.vehicle), !form.vehicle && "text-silver/50")} aria-invalid={!!errors.vehicle}>
-                          <option value="" disabled>Select vehicle</option>
-                          {VEHICLES.map((v) => <option key={v} value={v}>{v}</option>)}
-                        </select>
-                        {errors.vehicle && <p className="mt-1.5 flex items-center gap-1 text-xs text-red-400"><AlertCircle className="h-3 w-3" />{errors.vehicle}</p>}
+                    <fieldset className="border border-white/10 p-5">
+                      <legend className="font-display px-2 text-[11px] font-bold uppercase tracking-[0.2em] text-ember">Vehicle Details</legend>
+                      <div className="grid gap-5 sm:grid-cols-2">
+                        <div>
+                          <label htmlFor="cf-brand" className="font-display mb-2 block text-[11px] font-bold uppercase tracking-[0.18em] text-silver">
+                            Vehicle Brand *
+                          </label>
+                          <input id="cf-brand" type="text" autoComplete="off" placeholder="e.g. Toyota, Honda" value={form.brand} onChange={set("brand")} className={inputCls(errors.brand)} aria-invalid={!!errors.brand} />
+                          {errors.brand && <p className="mt-1.5 flex items-center gap-1 text-xs text-red-400"><AlertCircle className="h-3 w-3" />{errors.brand}</p>}
+                        </div>
+                        <div>
+                          <label htmlFor="cf-model" className="font-display mb-2 block text-[11px] font-bold uppercase tracking-[0.18em] text-silver">
+                            Vehicle Model *
+                          </label>
+                          <input id="cf-model" type="text" autoComplete="off" placeholder="e.g. Innova, City" value={form.model} onChange={set("model")} className={inputCls(errors.model)} aria-invalid={!!errors.model} />
+                          {errors.model && <p className="mt-1.5 flex items-center gap-1 text-xs text-red-400"><AlertCircle className="h-3 w-3" />{errors.model}</p>}
+                        </div>
                       </div>
-                      <div>
-                        <label htmlFor="cf-service" className="font-display mb-2 block text-[11px] font-bold uppercase tracking-[0.18em] text-silver">
-                          Service needed *
-                        </label>
-                        <select id="cf-service" value={form.service} onChange={set("service")} className={cn(inputCls(errors.service), !form.service && "text-silver/50")} aria-invalid={!!errors.service}>
-                          <option value="" disabled>Select service</option>
-                          {INTERESTS.map((s) => <option key={s} value={s}>{s}</option>)}
-                        </select>
-                        {errors.service && <p className="mt-1.5 flex items-center gap-1 text-xs text-red-400"><AlertCircle className="h-3 w-3" />{errors.service}</p>}
-                      </div>
+                    </fieldset>
+                    <div>
+                      <label htmlFor="cf-service" className="font-display mb-2 block text-[11px] font-bold uppercase tracking-[0.18em] text-silver">
+                        Service needed *
+                      </label>
+                      <select id="cf-service" value={form.service} onChange={set("service")} className={cn(inputCls(errors.service), !form.service && "text-silver/50")} aria-invalid={!!errors.service}>
+                        <option value="" disabled>Select service</option>
+                        {INTERESTS.map((s) => <option key={s} value={s}>{s}</option>)}
+                      </select>
+                      {errors.service && <p className="mt-1.5 flex items-center gap-1 text-xs text-red-400"><AlertCircle className="h-3 w-3" />{errors.service}</p>}
                     </div>
                     <div>
                       <label htmlFor="cf-msg" className="font-display mb-2 block text-[11px] font-bold uppercase tracking-[0.18em] text-silver">

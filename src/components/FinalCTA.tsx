@@ -26,7 +26,7 @@ export default function FinalCTA() {
       <div className="relative mx-auto max-w-4xl px-5 text-center lg:px-8">
         <Reveal>
           <p className="font-display text-[11px] font-bold uppercase tracking-[0.32em] text-ember">
-            Varkala · Kerala · Mon – Sat 9–8
+            Varkala · Kerala · Mon – Sat 8:30–6
           </p>
         </Reveal>
         <Reveal delay={0.1}>
@@ -64,7 +64,7 @@ export default function FinalCTA() {
         </Reveal>
         <Reveal delay={0.32}>
           <p className="mt-6 text-xs tracking-[0.18em] text-silver/70 uppercase">
-            {BUSINESS.phoneDisplay} · Pickup & drop available
+            {BUSINESS.phoneDisplay} · {BUSINESS.hoursShort}
           </p>
         </Reveal>
       </div>

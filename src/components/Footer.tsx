@@ -16,7 +16,7 @@ export default function Footer() {
               <NexgenLogo />
             </a>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-silver">
-              Premium automotive detailing studio in Varkala, Kerala — precision detailing,
+              Premium automotive detailing studio in Varkala, Kerala, offering precision detailing,
               protection and care for cars and bikes.
             </p>
             <p className="font-display mt-4 text-[11px] font-bold uppercase tracking-[0.24em] text-ember">

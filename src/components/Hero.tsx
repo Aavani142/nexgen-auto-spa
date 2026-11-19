@@ -70,8 +70,8 @@ export default function Hero() {
             className="max-w-xl"
           >
             <p className="border-l-2 border-ember pl-4 text-base leading-relaxed text-bone/85 sm:text-lg">
-              Precision detailing. Exceptional care. A flawless finish for every drive — from ceramic
-              protection to cabin revival.
+              Precision detailing. Exceptional care. A flawless finish for every drive, from Ceramic
+              Protection to cabin revival.
             </p>
             <div className="mt-4 flex items-center gap-2 pl-4 text-sm text-silver">
               <span className="flex gap-0.5" aria-label="Rated 4.5 out of 5 on Google">
@@ -124,7 +124,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 1.3 }}
           className="mt-14 flex items-center justify-between border-t border-white/10 pt-6 text-[11px] font-medium uppercase tracking-[0.2em] text-silver"
         >
-          <span className="hidden sm:block">Ceramic · Graphene · Interior · Foam Wash</span>
+          <span className="hidden sm:block">Ceramic · Graphene · Borophene · Interior · Foam Wash</span>
           <span className="sm:hidden">Varkala · Kerala</span>
           <span className="hidden items-center gap-3 md:flex">
             Scroll

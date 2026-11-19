@@ -6,19 +6,19 @@ import { Eyebrow, Reveal } from "./ui";
 const POINTS = [
   {
     t: "Attention to every detail",
-    d: "Edges, emblems, vents, stitching — the small areas most washes skip are where we spend our time.",
+    d: "Edges, emblems, vents and stitching: the small areas most washes skip are where we spend our time.",
   },
   {
     t: "Vehicle-specific care",
-    d: "Hatchback or luxury SUV, commuter or superbike — the process is matched to your paint, trim and usage.",
+    d: "Hatchback or luxury SUV, commuter or superbike, the process is matched to your paint, trim and usage.",
   },
   {
     t: "Protection-first thinking",
-    d: "From ceramic & graphene coatings to careful wash methods, everything is built to preserve value.",
+    d: "From Ceramic, Graphene & Borophene Coatings to careful wash methods, everything is built to preserve value.",
   },
   {
     t: "Customer-focused studio",
-    d: "Friendly team, comfortable lounge while you wait, and pickup & drop available across Varkala.",
+    d: "Tailored solutions for every budget, delivered by a dedicated and approachable team. Every vehicle receives the same industry-leading standard of care, without compromise.",
   },
 ];
 
@@ -65,7 +65,7 @@ export default function WhyNexgen() {
             className="absolute -left-2 top-8 bg-carbon px-5 py-4 text-bone shadow-xl sm:left-6"
           >
             <p className="font-display text-2xl font-extrabold leading-none">
-              9<span className="text-ember">–</span>8
+              8:30<span className="text-ember">–</span>6
             </p>
             <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.2em] text-silver">Mon – Sat · Varkala</p>
           </motion.div>
@@ -97,7 +97,7 @@ export default function WhyNexgen() {
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-neutral-600 sm:text-lg">
-              Anyone can rinse a car. We study it — paint, trim, cabin, wheels — then bring it back
+              Anyone can rinse a car. We study its paint, trim, cabin and wheels, then bring it back
               with methodical, professional care. That obsession is why Varkala trusts {BUSINESS.name} with
               daily drivers and prized machines alike.
             </p>

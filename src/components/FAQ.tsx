@@ -14,7 +14,7 @@ export default function FAQ() {
           <SectionHeading
             eyebrow="Good to know"
             title={<>Questions,<br />answered.</>}
-            desc="Everything practical about booking, timing and finding the studio. Still curious? Message us — we reply fast."
+            desc="Everything practical about booking, timing and finding the studio. Still curious? Message us and we'll reply fast."
           />
           <Reveal delay={0.2}>
             <a

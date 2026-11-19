@@ -3,17 +3,18 @@ export const BUSINESS = {
   short: "NEXGEN",
   tagline: "Your Drive. Our Obsession.",
   location: "Varkala, Kerala",
-  address: "Punnamoodu Kurakkanni Road, Kurakkanni, Varkala, Kerala 695141",
-  phoneDisplay: "+91 77365 85164",
-  phoneHref: "tel:+917736585164",
-  whatsapp: "https://wa.me/917736585164",
+  address: "Punnamoodu-Kurakkani Rd, Varkala, Trivandrum",
+  phoneDisplay: "+91 81295 85164",
+  phoneHref: "tel:+918129585164",
+  whatsapp: "https://wa.me/918129585164",
   instagram: "https://www.instagram.com/nexgen_autospa_varkala/",
   facebook: "https://www.facebook.com/autospavarkalas/",
-  hours: "Mon – Sat · 9:00 AM – 8:00 PM",
-  hoursShort: "Mon – Sat · 9 AM – 8 PM",
-  mapsQuery: "https://www.google.com/maps/search/?api=1&query=Nexgen+AutoSpa+Varkala+Kurakkanni+Road+Varkala+Kerala+695141",
+  hours: "Monday – Saturday · 8:30 AM – 6:00 PM",
+  hoursShort: "Mon – Sat · 8:30 AM – 6:00 PM",
+  // Both point at the same Google Maps listing: https://maps.app.goo.gl/SLbm1sov7V12bghv7
+  mapsQuery: "https://maps.app.goo.gl/SLbm1sov7V12bghv7",
   mapsEmbed:
-    "https://www.google.com/maps?q=Punnamoodu+Kurakkanni+Road,+Varkala,+Kerala+695141&output=embed",
+    "https://www.google.com/maps?q=Nexgen+AutoSpa+Varkala,+Punnamoodu+Kurakkanni+Rd,+Varkala,+Kerala+695141&output=embed",
   googleReviewsUrl: "https://share.google/fO64lqrqMJtfFO6Zq",
 };
 
@@ -32,15 +33,17 @@ export const PRODUCTS = [
   { name: "Koch-Chemie", country: "Germany", note: "Compounds, polishes & care chemistry" },
   { name: "RUPES", country: "Italy", note: "Polishing systems & machine technology" },
   { name: "GYEON", country: "South Korea", note: "Coating systems & surface protection" },
+  { name: "CARPRO", country: "International", note: "Coatings & detailing care products" },
+  { name: "Kovalent Coatings", country: "Australia", note: "Professional coating systems" },
 ];
 
 export const PAINT_PACKAGES = [
   {
     id: "wax",
     group: "Wax Protection",
-    blurb: "Entry protection with instant gloss — ideal for regularly maintained vehicles.",
+    blurb: "Entry protection with instant gloss, ideal for regularly maintained vehicles.",
     items: [
-      { name: "Normal Wax", durability: "3 Months", price: 4999, note: "Gloss refresh, easy maintenance washes" },
+      { name: "Standard Wax", durability: "3 Months", price: 4999, note: "Gloss refresh, easy maintenance washes" },
       { name: "Ceramic Wax", durability: "1 Year", price: 7999, note: "Deeper gloss, stronger water beading" },
     ],
   },
@@ -49,9 +52,9 @@ export const PAINT_PACKAGES = [
     group: "Ceramic Coating",
     blurb: "Hard, durable protection against sun, dust and everyday contaminants.",
     items: [
-      { name: "Ceramic Coating", durability: "2 Years", price: 17999, note: "Entry ceramic protection" },
-      { name: "Ceramic Coating", durability: "3 Years", price: 23999, note: "Thicker build, gloss + slickness", popular: true },
-      { name: "Ceramic Coating", durability: "5 Years", price: 29999, note: "Longest-term ceramic defence" },
+      { name: "Ceramic Shield", durability: "2 Years", price: 17999, note: "Entry Ceramic protection" },
+      { name: "Ceramic Armor", durability: "3 Years", price: 23999, note: "Thicker build, gloss + slickness" },
+      { name: "Ceramic Titan", durability: "5 Years", price: 29999, note: "Longest-term Ceramic defence", popular: true },
     ],
   },
   {
@@ -59,8 +62,8 @@ export const PAINT_PACKAGES = [
     group: "Advanced Coatings",
     blurb: "Next-generation protection for owners who want the very best finish.",
     items: [
-      { name: "Graphene Coating", durability: "4 Years", price: 26999, note: "Heat dissipation, extreme slickness" },
-      { name: "Borophene Coating", durability: "5 Years", price: 32999, note: "Flagship protection & depth of gloss" },
+      { name: "Graphene Elite", durability: "7 Years", price: 35999, note: "Heat dissipation, extreme slickness" },
+      { name: "Borophene Ultimate", durability: "9 Years", price: 41999, note: "Flagship protection & depth of gloss" },
     ],
   },
 ];
@@ -68,7 +71,7 @@ export const PAINT_PACKAGES = [
 export const inr = (n: number) => new Intl.NumberFormat("en-IN").format(n);
 
 export const waLink = (message: string) =>
-  `https://wa.me/917736585164?text=${encodeURIComponent(message)}`;
+  `https://wa.me/918129585164?text=${encodeURIComponent(message)}`;
 
 export const WA_DEFAULT = waLink(
   "Hi NEXGEN AUTO SPA! I'd like to book a detailing service for my vehicle. Please share available slots."
@@ -78,28 +81,27 @@ export const SERVICES = [
   {
     id: "ceramic-graphene",
     index: "01",
-    title: "Ceramic & Graphene Coating",
-    desc: "1 to 5-year paint protection with deep gloss, hydrophobics and UV defence — from ₹7,999 ceramic wax to flagship borophene.",
+    title: "Ceramic, Graphene & Borophene Coating",
+    desc: "2 to 9-year paint protection with deep gloss, hydrophobics, chemical resistance and UV defence, from ₹17,999 Ceramic Coating to flagship Borophene.",
     img: "https://images.pexels.com/photos/6873177/pexels-photo-6873177.jpeg?auto=compress&cs=tinysrgb&w=900",
     alt: "Water beading on coated car paint showing hydrophobic protection",
-    tag: "From ₹7,999",
+    tag: "Starting from ₹17,999",
     span: "lg:col-span-7",
   },
   {
     id: "interior",
     index: "02",
     title: "Interior Deep Cleaning",
-    desc: "Seats, carpets, roof liner, dashboard and every seam — extracted, shampooed and finished to a fresh, like-new cabin.",
+    desc: "Seats, carpets, roof liner, dashboard and every seam are extracted, shampooed and finished to a fresh, like-new cabin.",
     img: "https://images.pexels.com/photos/6873185/pexels-photo-6873185.jpeg?auto=compress&cs=tinysrgb&w=900",
     alt: "Detailer deep cleaning car interior seats",
-    tag: "Most Booked",
     span: "lg:col-span-5",
   },
   {
     id: "exterior",
     index: "03",
     title: "Exterior Detailing",
-    desc: "Multi-stage exterior revival — foam bath, decontamination, machine polish and seal for a mirror-grade finish.",
+    desc: "Multi-stage exterior revival with Foam Bath, Decontamination, Machine Polish and Seal for a mirror-grade finish.",
     img: "https://images.pexels.com/photos/14615269/pexels-photo-14615269.jpeg?auto=compress&cs=tinysrgb&w=900",
     alt: "Professional machine polishing a car exterior",
     tag: "Showroom Shine",
@@ -109,7 +111,7 @@ export const SERVICES = [
     id: "foam-wash",
     index: "04",
     title: "Premium Foam Wash",
-    desc: "Semi-automatic foam wash for cars & bikes. Thick foam, gentle hand finish, wheels, arches and glass detailed.",
+    desc: "Semi-automatic Foam Wash for cars & bikes. Thick foam, gentle hand finish, wheels, arches and glass detailed.",
     img: "https://images.pexels.com/photos/14231678/pexels-photo-14231678.jpeg?auto=compress&cs=tinysrgb&w=900",
     alt: "Luxury car wheel covered in foam during premium wash",
     tag: "Cars & Bikes",
@@ -119,7 +121,7 @@ export const SERVICES = [
     id: "bike",
     index: "05",
     title: "Bike Detailing & Care",
-    desc: "Dedicated two-wheeler wash, detailing, mechanical & electrical works, spares and customisation.",
+    desc: "Dedicated two-wheeler wash and detailing.",
     img: "https://images.pexels.com/photos/36709685/pexels-photo-36709685.jpeg?auto=compress&cs=tinysrgb&w=900",
     alt: "Motorcycle covered in foam during detailing wash",
     tag: "Two-Wheelers",
@@ -130,15 +132,23 @@ export const SERVICES = [
 export const TESTIMONIALS = [
   {
     quote:
-      "One of the best and affordable car and bike wash in Varkala. Friendly staff and has customer lounge for waiting.",
-    name: "Verified Google Review",
-    meta: "Car & Bike Wash · Varkala",
+      "Hand on heart ❤️ my Mercedes-Benz is shining like diamond in and out. All clean and hygienic. All thanks to Nexgen AustoSpa team for the hardwork. I really appreciate your dedication towards your work. God bless you and always be diligent towards your work. Money will flow like water to you.",
+    name: "Jennet Fernandes",
+    meta: "Local Guide · Google Review",
     rating: 5,
   },
   {
-    quote: "Good service. They also do pick up and drop.",
-    name: "Verified Google Review",
-    meta: "Detailing Service · Varkala",
+    quote:
+      "Ceramic coating: Nexgen AutoSpa : I have no words for the service which they have offered. Exceptionally talented people who know how to treat customers vechile with care and turn it to beauty once again. Their package is really comprehensive and they called me up regularly when my service eas due. I would always recommend Nexgen to anyone to avail thier service. I had opted for the IGL 10H ceramic coating and it is doing wonders to my Harrier.\nAll the best Nexgen\nRegards,\nSunil",
+    name: "Sunil Jayanandan",
+    meta: "Local Guide · Google Review",
+    rating: 5,
+  },
+  {
+    quote:
+      "I am a regular customer at Next Gen Auto Spa, Varkala , and I must say their services are truly exceptional. I have done ceramic and graphene coating for all my vehicles here, and every time the results have been outstanding.\n\nThe quality of work, attention to detail, and professionalism of the team are simply impressive. The staff members are very friendly, knowledgeable, and always ensure complete customer satisfaction.\n\nI am extremely happy with all the services they have provided, and I highly recommend Next Gen Auto Spa to anyone looking for premium car care and coating services.",
+    name: "Vrinda School of Yoga",
+    meta: "Varkala · Google Review",
     rating: 5,
   },
 ];
@@ -146,27 +156,27 @@ export const TESTIMONIALS = [
 export const FAQS = [
   {
     q: "How can I book a detailing service?",
-    a: "The fastest way is WhatsApp — tap any “Book on WhatsApp” button and send us your vehicle model and the service you need. You can also call us on +91 77365 85164 (9 AM – 8 PM, Monday to Saturday; closed Sunday) or fill the enquiry form below and we’ll call you back.",
+    a: "The fastest way is WhatsApp. Tap any “Book on WhatsApp” button and send us your vehicle model and the service you need. You can also call us on +91 81295 85164 (8:30 AM – 6:00 PM, Monday to Saturday; closed Sunday) or fill the enquiry form below and we’ll call you back.",
   },
   {
     q: "Do I need an appointment?",
-    a: "Walk-ins are welcome for foam washes, but we strongly recommend booking ahead for interior detailing, polishing and coatings so we can reserve a dedicated bay and give your vehicle unhurried attention.",
+    a: "Walk-ins are welcome for Premium Foam Washes, but we strongly recommend booking ahead for Interior Deep Cleaning, Paint Correction and Coatings so we can reserve a dedicated bay and give your vehicle unhurried attention.",
   },
   {
     q: "Which detailing service is right for my vehicle?",
-    a: "For regular upkeep, a premium foam wash is ideal. For dull paint, swirls or fading, ask about exterior detailing and polishing. For long-term protection, consider ceramic or graphene coating. For stained or dull cabins, interior deep cleaning is the answer. Message us photos of your vehicle and we’ll guide you honestly.",
+    a: "For regular upkeep, a Premium Foam Wash is ideal. For dull paint, swirls or fading, ask about Exterior Detailing and Paint Correction or Borophene Coating. For long-term protection, consider Ceramic, Graphene or Borophene Coating. For stained or dull cabins, Interior Deep Cleaning is the answer. Message us photos of your vehicle and we’ll guide you honestly.",
   },
   {
     q: "How long does a detailing appointment take?",
-    a: "It depends on the vehicle’s size and condition. A foam wash is quick, while deep interior work, paint correction or coatings take several hours and may need the vehicle for a full day. We’ll share a clear time estimate when you enquire — and pickup & drop is available.",
+    a: "It depends on the vehicle’s size and condition. A Foam Wash is quick, while deep interior work, Paint Correction or Coatings take several hours and may need the vehicle for a full day or a couple of days. We’ll share a clear time estimate when you enquire.",
   },
   {
     q: "How can I get a quote?",
-    a: "Paint correction & protection pricing is published on this page — Normal Wax from ₹4,999, Ceramic Wax ₹7,999, Ceramic Coating from ₹17,999 and Graphene/Borophene from ₹26,999, all using Koch-Chemie (Germany), RUPES (Italy) and GYEON (South Korea) products. For wash, interior and bike jobs, send your vehicle make, model and a few photos on WhatsApp — we’ll respond with the right care plan and a clear quote. No hidden charges, no pressure.",
+    a: "Paint Correction & Protection pricing is published on this page: Standard Wax from ₹4,999, Ceramic Wax ₹7,999, Ceramic Coating from ₹17,999, Graphene Elite from ₹35,999 and Borophene Ultimate from ₹41,999, all using Koch-Chemie (Germany), RUPES (Italy), GYEON (South Korea), CARPRO and Kovalent Coatings (Australia) products. For Wash, Interior and Bike jobs, send your vehicle brand and model and a few photos on WhatsApp and we’ll respond with the right care plan and a clear quote. No hidden charges, no pressure.",
   },
   {
-    q: "Where is Nexgen Auto Spa located?",
-    a: "You’ll find us at Punnamoodu Kurakkanni Road, Kurakkanni, Varkala, Kerala 695141 — easy to reach from across Varkala and nearby Trivandrum. Tap “Get Directions” for one-tap navigation, or call us and we’ll guide you in.",
+    q: "Where is NEXGEN AUTOSPA located?",
+    a: "You’ll find us at Punnamoodu-Kurakkani Rd, Varkala, Trivandrum. We’re just 1.3 km from Varkala Cliff and easy to reach from across Varkala. Tap “Get Directions” for one-tap navigation, or call us and we’ll guide you in.",
   },
 ];
 

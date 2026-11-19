@@ -11,7 +11,7 @@ export default function Services() {
           <SectionHeading
             eyebrow="What we do"
             title={<>Care for every panel.<br /><span className="text-silver">Inside & out.</span></>}
-            desc="Verified services from the Nexgen studio in Varkala — from everyday foam washes to concours-level coatings and bike care."
+            desc="Verified services from the Nexgen studio in Varkala, from everyday Foam Washes to concours-level Coatings and Bike Care."
           />
           <Reveal delay={0.2} className="shrink-0">
             <a
@@ -38,10 +38,12 @@ export default function Services() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-carbon via-carbon/45 to-carbon/5" aria-hidden />
                 <div className="absolute inset-x-0 top-0 flex items-start justify-between p-6">
-                  <span className="rounded-full border border-white/15 bg-black/45 px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-bone backdrop-blur-md">
-                    {s.tag}
-                  </span>
-                  <span className="font-display text-sm font-bold tracking-widest text-bone/50">{s.index}</span>
+                  {s.tag && (
+                    <span className="rounded-full border border-white/15 bg-black/45 px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-bone backdrop-blur-md">
+                      {s.tag}
+                    </span>
+                  )}
+                  <span className="ml-auto font-display text-sm font-bold tracking-widest text-bone/50">{s.index}</span>
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7">
                   <h3 className="font-display text-2xl font-bold tracking-tight text-bone sm:text-[1.7rem]">
@@ -66,12 +68,6 @@ export default function Services() {
             </Reveal>
           ))}
         </div>
-
-        <Reveal delay={0.1}>
-          <p className="mt-8 text-center text-xs tracking-wide text-silver/70">
-            Also available: seat covers · floor mats · two-wheeler mechanical & electrical works · spare parts · customer lounge & waiting area.
-          </p>
-        </Reveal>
       </div>
     </section>
   );

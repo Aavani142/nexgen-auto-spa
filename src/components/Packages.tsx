@@ -1,30 +1,30 @@
-import { ArrowUpRight, ShieldCheck, Wrench, Sparkles, CheckCircle2 } from "lucide-react";
-import { COATING_MAINTENANCE, inr, waLink } from "../data/site";
+import { ArrowUpRight, ShieldCheck } from "lucide-react";
+import { inr, waLink } from "../data/site";
 import { Reveal, Eyebrow } from "./ui";
 
 const WAX_SERVICES = [
-  { name: "Normal Wax", price: 4999, durability: "3 Months", desc: "Instant gloss revival and basic hydrophobic protection." },
-  { name: "Ceramic Wax", price: 7999, durability: "1 Year", desc: "Infused with ceramic SiO2 for deeper gloss, UV resistance, and durable water beading." },
+  { name: "Standard Wax", price: 4999, durability: "3 Months", desc: "Instant gloss revival and basic hydrophobic protection." },
+  { name: "Ceramic Wax", price: 7999, durability: "1 Year", desc: "Infused with Ceramic SiO2 for deeper gloss, UV resistance, and durable water beading." },
 ];
 
 const CERAMIC_PACKAGES = [
-  { name: "Ceramic Coating", price: 17999, durability: "2 Years", desc: "Essential multi-layer ceramic protection against daily wear, dust, and oxidation." },
-  { name: "Ceramic Coating", price: 23999, durability: "3 Years", desc: "Enhanced multi-stage coating with deeper gloss, slickness, and chemical resistance.", popular: true },
-  { name: "Ceramic Coating", price: 29999, durability: "5 Years", desc: "Maximum ceramic shield with ultra-hard SiO2 matrix for long-term paint preservation." },
+  { name: "Ceramic Shield", price: 17999, durability: "2 Years", desc: "Essential multi-layer Ceramic protection against daily wear, dust, and oxidation." },
+  { name: "Ceramic Armor", price: 23999, durability: "3 Years", desc: "Enhanced multi-stage coating with deeper gloss, slickness, and chemical resistance." },
+  { name: "Ceramic Titan", price: 29999, durability: "5 Years", desc: "Maximum Ceramic shield with ultra-hard SiO2 matrix for long-term paint preservation.", popular: true },
 ];
 
 const ADVANCED_COATINGS = [
   {
-    name: "Graphene Coating",
-    price: 26999,
-    durability: "4 Years",
-    desc: "Advanced graphene oxide matrix providing superior heat dissipation, reduced water spotting, and extreme surface slickness.",
+    name: "Graphene Elite",
+    price: 35999,
+    durability: "7 Years",
+    desc: "Advanced Graphene oxide matrix providing superior heat dissipation, reduced water spotting, and extreme surface slickness.",
     badge: "High Heat Defence",
   },
   {
-    name: "Borophene Coating",
-    price: 32999,
-    durability: "5 Years",
+    name: "Borophene Ultimate",
+    price: 41999,
+    durability: "9 Years",
     desc: "Next-generation 2D nanomaterial coating delivering unmatched surface hardness, optical clarity, and ultimate paint resilience.",
     badge: "Flagship Protection",
   },
@@ -47,7 +47,19 @@ const PRODUCTS = [
     brand: "GYEON",
     origin: "South Korea",
     role: "Advanced Quartz Coating Systems",
-    desc: "Globally acclaimed quartz and graphene coating chemistry tested under extreme climates.",
+    desc: "Globally acclaimed quartz and Graphene Coating chemistry tested under extreme climates.",
+  },
+  {
+    brand: "CARPRO",
+    origin: "International",
+    role: "Coatings & Detailing Care",
+    desc: "Makers of CQUARTZ Ceramic Coatings, plus washing, decontamination and paint-prep care trusted by detailers worldwide.",
+  },
+  {
+    brand: "Kovalent Coatings",
+    origin: "Australia",
+    role: "Professional Coating Systems",
+    desc: "Advanced paint protection coatings engineered for durability, gloss and long-lasting performance.",
   },
 ];
 
@@ -74,10 +86,16 @@ export default function Packages() {
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-5 text-base leading-relaxed text-silver sm:text-lg">
-              Give your car a lasting shine and premium protection with our professional paint
-              correction and coating services. We use premium international products and advanced
+              Give your car a lasting shine and premium protection with our professional Paint
+              Correction and Coating services. We use premium international products and advanced
               detailing techniques to enhance your vehicle's appearance, restore its gloss, and
               protect its paintwork.
+            </p>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-ember/40 bg-ember/10 px-4 py-2 text-xs font-semibold text-ember sm:text-sm">
+              <ShieldCheck className="h-4 w-4 shrink-0" />
+              Prices shown are for hatchbacks and vary by vehicle size.
             </p>
           </Reveal>
         </div>
@@ -113,9 +131,12 @@ export default function Packages() {
                       {it.durability}
                     </span>
                   </div>
-                  <p className="font-display text-2xl font-extrabold tabular-nums text-bone sm:text-right">
-                    ₹{inr(it.price)}
-                  </p>
+                  <div className="sm:text-right">
+                    <span className="block text-[10px] font-bold uppercase tracking-[0.18em] text-silver">Starting from</span>
+                    <p className="font-display text-2xl font-extrabold tabular-nums text-bone">
+                      ₹{inr(it.price)}
+                    </p>
+                  </div>
                   <div className="sm:justify-self-end">
                     <a
                       href={waLink(`Hi NEXGEN AUTO SPA! I would like to book "${it.name}" (₹${inr(it.price)}, ${it.durability} durability). My vehicle is: `)}
@@ -173,12 +194,15 @@ export default function Packages() {
                       {it.durability}
                     </span>
                   </div>
-                  <p className="font-display text-2xl font-extrabold tabular-nums text-bone sm:text-right">
-                    ₹{inr(it.price)}
-                  </p>
+                  <div className="sm:text-right">
+                    <span className="block text-[10px] font-bold uppercase tracking-[0.18em] text-silver">Starting from</span>
+                    <p className="font-display text-2xl font-extrabold tabular-nums text-bone">
+                      ₹{inr(it.price)}
+                    </p>
+                  </div>
                   <div className="sm:justify-self-end">
                     <a
-                      href={waLink(`Hi NEXGEN AUTO SPA! I would like to book Ceramic Coating (${it.durability} protection, ₹${inr(it.price)}). My vehicle is: `)}
+                      href={waLink(`Hi NEXGEN AUTO SPA! I would like to book "${it.name}" Ceramic Coating (${it.durability} protection, ₹${inr(it.price)}). My vehicle is: `)}
                       target="_blank"
                       rel="noreferrer"
                       className="font-display inline-flex items-center gap-1.5 border border-white/15 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-bone transition-all hover:border-ember hover:bg-ember hover:text-carbon"
@@ -231,7 +255,7 @@ export default function Packages() {
 
                   <div className="mt-8 flex items-baseline justify-between border-t border-white/10 pt-6">
                     <div>
-                      <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-silver">Price</span>
+                      <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-silver">Starting from</span>
                       <p className="font-display text-3xl font-extrabold text-bone">
                         ₹{inr(it.price)}
                       </p>
@@ -268,70 +292,23 @@ export default function Packages() {
             </div>
           </Reveal>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {PRODUCTS.map((p, i) => (
               <Reveal key={p.brand} delay={i * 0.1}>
-                <div className="group h-full border border-white/10 bg-graphite/40 p-6 transition-all hover:border-ember/40 hover:bg-graphite">
-                  <div className="flex items-baseline justify-between">
-                    <h4 className="font-display text-xl font-black text-bone">{p.brand}</h4>
-                    <span className="rounded-full border border-white/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.18em] text-ember">
-                      {p.origin}
-                    </span>
-                  </div>
-                  <p className="mt-2 text-xs font-semibold text-silver/80">{p.role}</p>
-                  <p className="mt-3 text-xs leading-relaxed text-silver">{p.desc}</p>
+                <div className="group relative flex h-full flex-col overflow-hidden border border-white/10 bg-graphite/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-ember/40 hover:bg-graphite">
+                  <span className="absolute inset-x-0 top-0 h-[2px] origin-left scale-x-0 bg-ember transition-transform duration-300 group-hover:scale-x-100" aria-hidden />
+                  <span className="self-start whitespace-nowrap rounded-full border border-ember/30 bg-ember/10 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.18em] text-ember">
+                    {p.origin}
+                  </span>
+                  <h4 className="font-display mt-4 text-2xl font-black leading-tight tracking-tight text-bone">{p.brand}</h4>
+                  <p className="mt-3 border-l-2 border-ember/60 pl-3 text-xs font-semibold uppercase tracking-[0.08em] text-bone/80">
+                    {p.role}
+                  </p>
+                  <p className="mt-4 text-sm leading-relaxed text-silver">{p.desc}</p>
                 </div>
               </Reveal>
             ))}
           </div>
-        </div>
-
-        {/* Important: Long-Term Maintenance & Care */}
-        <div className="mt-16">
-          <Reveal>
-            <div className="relative overflow-hidden border border-ember/30 bg-graphite/70 p-7 sm:p-10">
-              <div className="absolute left-0 top-0 h-1 w-full bg-ember" aria-hidden />
-
-              <div className="flex items-start gap-4">
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-ember/15 text-ember">
-                  <Wrench className="h-6 w-6" strokeWidth={1.8} />
-                </span>
-                <div className="flex-1">
-                  <h4 className="font-display text-2xl font-bold tracking-tight text-bone sm:text-3xl">
-                    {COATING_MAINTENANCE.title}
-                  </h4>
-                  <p className="mt-2 text-sm font-medium text-silver sm:text-base">
-                    {COATING_MAINTENANCE.lead}
-                  </p>
-
-                  <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                    {COATING_MAINTENANCE.points.map((pt, i) => (
-                      <div key={i} className="flex items-start gap-2.5 rounded-sm border border-white/10 bg-carbon/50 p-4">
-                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-ember" />
-                        <p className="text-xs leading-relaxed text-silver">{pt}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-8 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center">
-                    <p className="font-display text-base font-bold tracking-tight text-bone sm:text-lg">
-                      <Sparkles className="mr-2 inline h-4 w-4 text-ember" />
-                      {COATING_MAINTENANCE.motto}
-                    </p>
-                    <a
-                      href={waLink("Hi NEXGEN AUTO SPA! I have a question regarding coating maintenance or booking a 6-month inspection.")}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="font-display inline-flex items-center gap-1.5 bg-ember px-5 py-3 text-xs font-bold uppercase tracking-[0.14em] text-carbon transition-colors hover:bg-ember-deep"
-                    >
-                      Enquire on Maintenance
-                      <ArrowUpRight className="h-3.5 w-3.5" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Reveal>
         </div>
       </div>
     </section>

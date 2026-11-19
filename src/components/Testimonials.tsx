@@ -73,7 +73,7 @@ export default function Testimonials() {
               dark
               eyebrow="Customer love"
               title={<>Word on the street<br />in Varkala.</>}
-              desc="Real feedback from verified Google reviews for Nexgen AutoSpa Varkala. No scripts, no actors — just genuine vehicle owners."
+              desc="Real feedback from verified Google reviews for Nexgen AutoSpa Varkala. No scripts, no actors, just genuine vehicle owners."
             />
             <Reveal delay={0.2}>
               <div className="mt-8 flex items-center gap-3">
@@ -111,57 +111,30 @@ export default function Testimonials() {
           </div>
 
           <Reveal delay={0.1} className="relative">
-            <div className="relative min-h-[340px] overflow-hidden bg-carbon p-8 text-bone sm:min-h-[320px] sm:p-12">
+            <div className="relative overflow-hidden bg-carbon p-7 text-bone sm:p-10">
               <Quote className="absolute -right-4 -top-4 h-40 w-40 text-white/[0.04]" aria-hidden />
               <div className="absolute left-0 top-0 h-full w-1.5 bg-ember" aria-hidden />
-              <AnimatePresence mode="wait" custom={dir}>
-                <motion.blockquote
-                  key={idx}
-                  custom={dir}
-                  initial={{ opacity: 0, x: 40 * dir }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -40 * dir }}
-                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex gap-1" aria-label={`${r.rating} out of 5 stars`}>
-                      {Array.from({ length: r.rating }).map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
-                      ))}
-                    </div>
-                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-silver/60">
-                      Google Review
-                    </span>
+              <div className="grid">
+                {/* invisible copies keep the card as tall as the longest review */}
+                {TESTIMONIALS.map((t, i) => (
+                  <div key={i} className="invisible [grid-area:1/1]" aria-hidden>
+                    <ReviewBody r={t} />
                   </div>
-
-                  <p className="font-display mt-6 text-xl font-medium leading-snug tracking-tight sm:text-2xl lg:text-[1.7rem]">
-                    “{r.quote}”
-                  </p>
-                  <footer className="mt-8 flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <span className="grid h-11 w-11 place-items-center rounded-full bg-ember font-display text-sm font-black text-carbon">
-                        G
-                      </span>
-                      <span>
-                        <span className="flex items-center gap-1.5 text-sm font-bold">
-                          {r.name}
-                          <BadgeCheck className="h-4 w-4 text-emerald-400" aria-label="Verified" />
-                        </span>
-                        <span className="block text-xs text-silver">{r.meta}</span>
-                      </span>
-                    </div>
-
-                    <a
-                      href={BUSINESS.googleReviewsUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="hidden items-center gap-1 text-xs font-semibold text-ember hover:underline sm:flex"
-                    >
-                      Verify on Google <ArrowUpRight className="h-3 w-3" />
-                    </a>
-                  </footer>
-                </motion.blockquote>
-              </AnimatePresence>
+                ))}
+                <AnimatePresence mode="wait" custom={dir} initial={false}>
+                  <motion.blockquote
+                    key={idx}
+                    custom={dir}
+                    initial={{ opacity: 0, x: 40 * dir }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -40 * dir }}
+                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    className="[grid-area:1/1]"
+                  >
+                    <ReviewBody r={r} />
+                  </motion.blockquote>
+                </AnimatePresence>
+              </div>
             </div>
 
             <p className="mt-4 text-xs text-neutral-500">
@@ -179,5 +152,58 @@ export default function Testimonials() {
         </div>
       </div>
     </section>
+  );
+}
+
+type Review = (typeof TESTIMONIALS)[number];
+
+function ReviewBody({ r }: { r: Review }) {
+  return (
+    <>
+    <div className="flex items-center justify-between">
+      <div className="flex gap-1" aria-label={`${r.rating} out of 5 stars`}>
+        {Array.from({ length: r.rating }).map((_, i) => (
+          <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+        ))}
+      </div>
+      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-silver/60">
+        Google Review
+      </span>
+    </div>
+
+    <p
+      className={cn(
+        "font-display mt-5 whitespace-pre-line font-medium tracking-tight",
+        r.quote.length > 200
+          ? "text-[15px] leading-relaxed sm:text-base lg:text-[1.05rem]"
+          : "text-xl leading-snug sm:text-2xl lg:text-[1.7rem]"
+      )}
+    >
+      “{r.quote}”
+    </p>
+    <footer className="mt-6 flex items-center justify-between">
+      <div className="flex items-center gap-3">
+        <span className="grid h-11 w-11 place-items-center rounded-full bg-ember font-display text-sm font-black text-carbon">
+          G
+        </span>
+        <span>
+          <span className="flex items-center gap-1.5 text-sm font-bold">
+            {r.name}
+            <BadgeCheck className="h-4 w-4 text-emerald-400" aria-label="Verified" />
+          </span>
+          <span className="block text-xs text-silver">{r.meta}</span>
+        </span>
+      </div>
+
+      <a
+        href={BUSINESS.googleReviewsUrl}
+        target="_blank"
+        rel="noreferrer"
+        className="hidden items-center gap-1 text-xs font-semibold text-ember hover:underline sm:flex"
+      >
+        Verify on Google <ArrowUpRight className="h-3 w-3" />
+      </a>
+    </footer>
+    </>
   );
 }
