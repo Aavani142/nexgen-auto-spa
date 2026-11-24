@@ -5,7 +5,6 @@ import Services from "./components/Services";
 import WhyNexgen from "./components/WhyNexgen";
 import Experience from "./components/Experience";
 import Testimonials from "./components/Testimonials";
-import Packages from "./components/Packages";
 import FAQ from "./components/FAQ";
 import FinalCTA from "./components/FinalCTA";
 import Contact from "./components/Contact";
@@ -30,7 +29,6 @@ export default function App() {
         <WhyNexgen />
         <Experience />
         <Testimonials />
-        <Packages />
         <FAQ />
         <FinalCTA />
         <Contact />

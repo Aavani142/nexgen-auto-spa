@@ -11,7 +11,6 @@ export const BUSINESS = {
   facebook: "https://www.facebook.com/autospavarkalas/",
   hours: "Monday – Saturday · 8:30 AM – 6:00 PM",
   hoursShort: "Mon – Sat · 8:30 AM – 6:00 PM",
-  // Both point at the same Google Maps listing: https://maps.app.goo.gl/SLbm1sov7V12bghv7
   mapsQuery: "https://maps.app.goo.gl/SLbm1sov7V12bghv7",
   mapsEmbed:
     "https://www.google.com/maps?q=Nexgen+AutoSpa+Varkala,+Punnamoodu+Kurakkanni+Rd,+Varkala,+Kerala+695141&output=embed",
@@ -85,7 +84,6 @@ export const SERVICES = [
     desc: "2 to 9-year paint protection with deep gloss, hydrophobics, chemical resistance and UV defence, from ₹17,999 Ceramic Coating to flagship Borophene.",
     img: "https://images.pexels.com/photos/6873177/pexels-photo-6873177.jpeg?auto=compress&cs=tinysrgb&w=900",
     alt: "Water beading on coated car paint showing hydrophobic protection",
-    tag: "Starting from ₹17,999",
     span: "lg:col-span-7",
   },
   {
