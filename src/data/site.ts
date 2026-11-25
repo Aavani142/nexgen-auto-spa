@@ -42,8 +42,8 @@ export const PAINT_PACKAGES = [
     group: "Wax Protection",
     blurb: "Entry protection with instant gloss, ideal for regularly maintained vehicles.",
     items: [
-      { name: "Standard Wax", durability: "3 Months", price: 4999, note: "Gloss refresh, easy maintenance washes" },
-      { name: "Ceramic Wax", durability: "1 Year", price: 7999, note: "Deeper gloss, stronger water beading" },
+      { name: "Standard Wax", durability: "3 Months", note: "Gloss refresh, easy maintenance washes" },
+      { name: "Ceramic Wax", durability: "1 Year", note: "Deeper gloss, stronger water beading" },
     ],
   },
   {
@@ -51,9 +51,9 @@ export const PAINT_PACKAGES = [
     group: "Ceramic Coating",
     blurb: "Hard, durable protection against sun, dust and everyday contaminants.",
     items: [
-      { name: "Ceramic Shield", durability: "2 Years", price: 17999, note: "Entry Ceramic protection" },
-      { name: "Ceramic Armor", durability: "3 Years", price: 23999, note: "Thicker build, gloss + slickness" },
-      { name: "Ceramic Titan", durability: "5 Years", price: 29999, note: "Longest-term Ceramic defence", popular: true },
+      { name: "Ceramic Shield", durability: "2 Years", note: "Entry Ceramic protection" },
+      { name: "Ceramic Armor", durability: "3 Years", note: "Thicker build, gloss + slickness" },
+      { name: "Ceramic Titan", durability: "5 Years", note: "Longest-term Ceramic defence", popular: true },
     ],
   },
   {
@@ -61,8 +61,8 @@ export const PAINT_PACKAGES = [
     group: "Advanced Coatings",
     blurb: "Next-generation protection for owners who want the very best finish.",
     items: [
-      { name: "Graphene Elite", durability: "7 Years", price: 35999, note: "Heat dissipation, extreme slickness" },
-      { name: "Borophene Ultimate", durability: "9 Years", price: 41999, note: "Flagship protection & depth of gloss" },
+      { name: "Graphene Elite", durability: "7 Years", note: "Heat dissipation, extreme slickness" },
+      { name: "Borophene Ultimate", durability: "9 Years", note: "Flagship protection & depth of gloss" },
     ],
   },
 ];
@@ -81,7 +81,7 @@ export const SERVICES = [
     id: "ceramic-graphene",
     index: "01",
     title: "Ceramic, Graphene & Borophene Coating",
-    desc: "2 to 9-year paint protection with deep gloss, hydrophobics, chemical resistance and UV defence, from ₹17,999 Ceramic Coating to flagship Borophene.",
+    desc: "2 to 9-year paint protection with deep gloss, hydrophobics, chemical resistance and UV defence, from Ceramic Coating to flagship Borophene.",
     img: "https://images.pexels.com/photos/6873177/pexels-photo-6873177.jpeg?auto=compress&cs=tinysrgb&w=900",
     alt: "Water beading on coated car paint showing hydrophobic protection",
     span: "lg:col-span-7",
@@ -170,7 +170,7 @@ export const FAQS = [
   },
   {
     q: "How can I get a quote?",
-    a: "Paint Correction & Protection pricing is published on this page: Standard Wax from ₹4,999, Ceramic Wax ₹7,999, Ceramic Coating from ₹17,999, Graphene Elite from ₹35,999 and Borophene Ultimate from ₹41,999, all using Koch-Chemie (Germany), RUPES (Italy), GYEON (South Korea), CARPRO and Kovalent Coatings (Australia) products. For Wash, Interior and Bike jobs, send your vehicle brand and model and a few photos on WhatsApp and we’ll respond with the right care plan and a clear quote. No hidden charges, no pressure.",
+    a: "Our Paint Correction & Protection packages (Standard Wax, Ceramic Wax, Ceramic Coating, Graphene Elite and Borophene Ultimate) are listed on this page, all using Koch-Chemie (Germany), RUPES (Italy), GYEON (South Korea), CARPRO and Kovalent Coatings (Australia) products. For any service, send your vehicle brand and model and a few photos on WhatsApp and we’ll respond with the right care plan and a clear quote. No hidden charges, no pressure.",
   },
   {
     q: "Where is NEXGEN AUTOSPA located?",
@@ -182,7 +182,7 @@ export const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
   { label: "Why Nexgen", href: "#why" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Packages", href: "#packages" },
   { label: "Reviews", href: "#reviews" },
   { label: "Contact", href: "#contact" },
 ];

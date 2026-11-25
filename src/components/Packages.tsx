@@ -1,29 +1,27 @@
 import { ArrowUpRight, ShieldCheck } from "lucide-react";
-import { inr, waLink } from "../data/site";
+import { waLink } from "../data/site";
 import { Reveal, Eyebrow } from "./ui";
 
 const WAX_SERVICES = [
-  { name: "Standard Wax", price: 4999, durability: "3 Months", desc: "Instant gloss revival and basic hydrophobic protection." },
-  { name: "Ceramic Wax", price: 7999, durability: "1 Year", desc: "Infused with Ceramic SiO2 for deeper gloss, UV resistance, and durable water beading." },
+  { name: "Standard Wax", durability: "3 Months", desc: "Instant gloss revival and basic hydrophobic protection." },
+  { name: "Ceramic Wax", durability: "1 Year", desc: "Infused with Ceramic SiO2 for deeper gloss, UV resistance, and durable water beading." },
 ];
 
 const CERAMIC_PACKAGES = [
-  { name: "Ceramic Shield", price: 17999, durability: "2 Years", desc: "Essential multi-layer Ceramic protection against daily wear, dust, and oxidation." },
-  { name: "Ceramic Armor", price: 23999, durability: "3 Years", desc: "Enhanced multi-stage coating with deeper gloss, slickness, and chemical resistance." },
-  { name: "Ceramic Titan", price: 29999, durability: "5 Years", desc: "Maximum Ceramic shield with ultra-hard SiO2 matrix for long-term paint preservation.", popular: true },
+  { name: "Ceramic Shield", durability: "2 Years", desc: "Essential multi-layer Ceramic protection against daily wear, dust, and oxidation." },
+  { name: "Ceramic Armor", durability: "3 Years", desc: "Enhanced multi-stage coating with deeper gloss, slickness, and chemical resistance." },
+  { name: "Ceramic Titan", durability: "5 Years", desc: "Maximum Ceramic shield with ultra-hard SiO2 matrix for long-term paint preservation.", popular: true },
 ];
 
 const ADVANCED_COATINGS = [
   {
     name: "Graphene Elite",
-    price: 35999,
     durability: "7 Years",
     desc: "Advanced Graphene oxide matrix providing superior heat dissipation, reduced water spotting, and extreme surface slickness.",
     badge: "High Heat Defence",
   },
   {
     name: "Borophene Ultimate",
-    price: 41999,
     durability: "9 Years",
     desc: "Next-generation 2D nanomaterial coating delivering unmatched surface hardness, optical clarity, and ultimate paint resilience.",
     badge: "Flagship Protection",
@@ -65,7 +63,7 @@ const PRODUCTS = [
 
 export default function Packages() {
   return (
-    <section id="pricing" className="relative overflow-hidden bg-carbon py-24 sm:py-32">
+    <section id="packages" className="relative overflow-hidden bg-carbon py-24 sm:py-32">
       {/* Background outline watermark */}
       <div className="pointer-events-none absolute right-0 top-12 select-none overflow-hidden" aria-hidden>
         <p className="font-display whitespace-nowrap text-[14vw] font-extrabold leading-none tracking-tighter text-white/[0.02]">
@@ -95,7 +93,7 @@ export default function Packages() {
           <Reveal delay={0.2}>
             <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-ember/40 bg-ember/10 px-4 py-2 text-xs font-semibold text-ember sm:text-sm">
               <ShieldCheck className="h-4 w-4 shrink-0" />
-              Prices shown are for hatchbacks and vary by vehicle size.
+              Message us on WhatsApp with your vehicle model for a personalised quote.
             </p>
           </Reveal>
         </div>
@@ -119,7 +117,7 @@ export default function Packages() {
           <div className="mt-6 divide-y divide-white/[0.08] border-b border-white/[0.08]">
             {WAX_SERVICES.map((it, i) => (
               <Reveal key={it.name} delay={i * 0.08}>
-                <div className="group relative grid grid-cols-1 items-center gap-4 py-6 transition-colors hover:bg-white/[0.02] sm:grid-cols-[1.6fr_1fr_auto_1.2fr] sm:px-4">
+                <div className="group relative grid grid-cols-1 items-center gap-4 py-6 transition-colors hover:bg-white/[0.02] sm:grid-cols-[1.6fr_1fr_auto] sm:px-4">
                   <span className="absolute left-0 top-0 h-full w-[3px] scale-y-0 bg-ember transition-transform group-hover:scale-y-100" aria-hidden />
                   <div>
                     <h4 className="font-display text-xl font-bold text-bone">{it.name}</h4>
@@ -131,15 +129,9 @@ export default function Packages() {
                       {it.durability}
                     </span>
                   </div>
-                  <div className="sm:text-right">
-                    <span className="block text-[10px] font-bold uppercase tracking-[0.18em] text-silver">Starting from</span>
-                    <p className="font-display text-2xl font-extrabold tabular-nums text-bone">
-                      ₹{inr(it.price)}
-                    </p>
-                  </div>
                   <div className="sm:justify-self-end">
                     <a
-                      href={waLink(`Hi NEXGEN AUTO SPA! I would like to book "${it.name}" (₹${inr(it.price)}, ${it.durability} durability). My vehicle is: `)}
+                      href={waLink(`Hi NEXGEN AUTO SPA! I would like to book "${it.name}" (${it.durability} durability). My vehicle is: `)}
                       target="_blank"
                       rel="noreferrer"
                       className="font-display inline-flex items-center gap-1.5 border border-white/15 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-bone transition-all hover:border-ember hover:bg-ember hover:text-carbon"
@@ -175,7 +167,7 @@ export default function Packages() {
           <div className="mt-6 divide-y divide-white/[0.08] border-b border-white/[0.08]">
             {CERAMIC_PACKAGES.map((it, i) => (
               <Reveal key={it.name + it.durability} delay={i * 0.08}>
-                <div className="group relative grid grid-cols-1 items-center gap-4 py-6 transition-colors hover:bg-white/[0.02] sm:grid-cols-[1.6fr_1fr_auto_1.2fr] sm:px-4">
+                <div className="group relative grid grid-cols-1 items-center gap-4 py-6 transition-colors hover:bg-white/[0.02] sm:grid-cols-[1.6fr_1fr_auto] sm:px-4">
                   <span className="absolute left-0 top-0 h-full w-[3px] scale-y-0 bg-ember transition-transform group-hover:scale-y-100" aria-hidden />
                   <div>
                     <div className="flex items-center gap-2.5">
@@ -194,15 +186,9 @@ export default function Packages() {
                       {it.durability}
                     </span>
                   </div>
-                  <div className="sm:text-right">
-                    <span className="block text-[10px] font-bold uppercase tracking-[0.18em] text-silver">Starting from</span>
-                    <p className="font-display text-2xl font-extrabold tabular-nums text-bone">
-                      ₹{inr(it.price)}
-                    </p>
-                  </div>
                   <div className="sm:justify-self-end">
                     <a
-                      href={waLink(`Hi NEXGEN AUTO SPA! I would like to book "${it.name}" Ceramic Coating (${it.durability} protection, ₹${inr(it.price)}). My vehicle is: `)}
+                      href={waLink(`Hi NEXGEN AUTO SPA! I would like to book "${it.name}" Ceramic Coating (${it.durability} protection). My vehicle is: `)}
                       target="_blank"
                       rel="noreferrer"
                       className="font-display inline-flex items-center gap-1.5 border border-white/15 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-bone transition-all hover:border-ember hover:bg-ember hover:text-carbon"
@@ -253,15 +239,9 @@ export default function Packages() {
                     </p>
                   </div>
 
-                  <div className="mt-8 flex items-baseline justify-between border-t border-white/10 pt-6">
-                    <div>
-                      <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-silver">Starting from</span>
-                      <p className="font-display text-3xl font-extrabold text-bone">
-                        ₹{inr(it.price)}
-                      </p>
-                    </div>
+                  <div className="mt-8 flex items-center justify-end border-t border-white/10 pt-6">
                     <a
-                      href={waLink(`Hi NEXGEN AUTO SPA! I would like to book "${it.name}" (₹${inr(it.price)}, ${it.durability} durability). My vehicle is: `)}
+                      href={waLink(`Hi NEXGEN AUTO SPA! I would like to book "${it.name}" (${it.durability} durability). My vehicle is: `)}
                       target="_blank"
                       rel="noreferrer"
                       className="font-display inline-flex items-center gap-1.5 bg-ember px-5 py-3 text-xs font-bold uppercase tracking-[0.14em] text-carbon transition-colors hover:bg-ember-deep"
